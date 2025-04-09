@@ -1,0 +1,86 @@
+---
+configuration:
+  settings:
+    # dbs
+    #
+    DB: user id=sa;pwd=Eutech@123;data source=localhost;initial catalog=asp
+    GroupADB: user id=sa;pwd=Eutech@123;data source=localhost;initial catalog=ProcessDB
+    JobQueueDB: user id=sa;pwd=Eutech@123;data source=localhost;initial catalog=JobQueueDB
+    MessagingDB: user id=sa;pwd=Eutech@123;data source=localhost;initial catalog=MessagingDB
+    LucyEventDB: user id=sa;pwd=Eutech@123;data source=localhost;initial catalog=LucyEventDB
+    GroupDB: user id=sa;pwd=Eutech@123;data source=localhost;initial catalog=ProcessDB
+    # process
+    #
+    ProcessEngine.Groups: A
+    ProcessEngine.Clustered: 0
+    ProcessEngine.Threads: 1
+    ProcessEngine.SleepTime: 1000
+    ProcessEngine.EnableDebugging: 0
+    # iviva
+    #
+    AccountUrl: https://{account}.iviva.local
+    BaseDomain: iviva.local
+    UrlPattern: SubDomain
+    TempFileLocation: /tmp/iviva/uploads
+    MaxUploadFileSizeMB: 30
+    SaveAttachmentsToFileServer: 1
+    MaxDBUploadFileSizeMB: 20
+    LargeUploadFileSizeMB: 5
+    MaxUploadChunkSizeMB: 1
+    Lucy.EnableCors: 1
+    OAuth2.AccessTokenExpiryInSeconds: 3600
+    OAuth2.UserAuthorizationExpiryInDays: 365
+    OAuth2.UserAuthorizationHasExpiry: 0
+    OAuth2.AuthorizationCodeExpiryInSeconds: 600
+    OauthCallbackUri: https://oauth.ivivacloud.com/callback
+    Iviva.Server.Host: http://localhost:5000
+    # common
+    RedisServer: localhost
+    MongoDBServer: mongodb://localhost:27017
+    # iviva & lucy
+    #
+    Path: /var/data/iviva/apps/iviva.dx
+    SystemPath: /var/data/iviva/ivivaweb
+    CustomAppsPath: /var/data/iviva/apps/lucylaunch/apps,/var/data/iviva/apps/uxp
+    CustomAppRepositoryPath: /var/data/iviva/apps/lucy-connectors
+    LogPath: /var/log/iviva
+    FileServer: /var/data/iviva/uploads
+    LucyServer: localhost:9090
+# lucy
+#
+    LucyEngine.ClusterLockTime: 3
+    LucyEngine.DefaultTimeoutInSeconds: 5
+    LucyEngine.Clustered: 0
+    Lucy.LogWebServiceRequests: 1
+    LucyEngine.HttpServer.Port: 9111
+    LucyEngine.HttpServer.Host: localhost
+    LucyEngine.InternalTimeoutInSeconds: 30
+    LucyEngine.ExecuteLucyActionTimeoutInSeconds: 30
+    LucyEngine.MaxDebugInfoLength: 10024
+    LucyEngine.EnableDebugger: 1
+    LucyEngine.EnableOIDebugLog: 1
+    LucyEngine.TimeSeries.FlushInterval: 5000
+    LucyEngine.TimeSeries.MaxFlushThreshold: 100
+    LucyEngine.TimeSeries.MinFlushThreshold: 1
+    LucyEngine.TimeSeries.DataStore: influxdb
+    LucyEngine.TimeSeries.InfluxUrl: http://localhost:8086
+    LucyEngine.Serializer: wire
+    LucyEngine.DebugDataStore: mongodb://localhost:27017
+    LucyEngine.ThreadPool.CanConfigure: 1
+    LucyEngine.ThreadPool.MinWorkerThreads: 100
+    Iviva.Sql.TimeoutInSeconds: 30
+    Iviva.Sql.SlowQueryThresholdInMilliseconds: 3000
+    Iviva.Sql.RetryEnabled: 0
+    Iviva.Sql.RetryCount: 5
+    Iviva.Sql.RetryWithExponentialBackoff: 1
+    Iviva.Sql.RetryIntervalInMilliseconds: 3000
+    Iviva.Sql.PrintAllErrors: 0
+    Iviva.Sql.PrintAllErrorsLimit: 10
+    Iviva.Redis.RetryEnabled: 0
+    Iviva.Redis.RetryCount: 5
+    Iviva.Redis.RetryWithExponentialBackoff: 1
+    Iviva.Redis.RetryIntervalInMilliseconds: 3000
+    ReportEngine.Plugins: /var/data/iviva/ReportEngines/BoldReportEngine/BoldReportEngine.dll
+  account_domain_map:
+    netcore: '*'
+
