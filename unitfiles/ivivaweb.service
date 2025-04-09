@@ -1,0 +1,17 @@
+[Unit]
+Description=ivivaweb
+After=network.target
+StartLimitIntervalSec=90
+StartLimitBurst=5
+[Service]
+WorkingDirectory=/var/data/iviva/ivivaweb
+ExecStart=/var/data/iviva/ivivaweb/ivivaweb
+Restart=on-failure
+#Restart service after 3 seconds if the service crashes
+RestartSec=5
+Environment=IVIVA_CONFIG_PATH=/var/data/iviva/iviva.config.yml
+Environment=LucyServer=localhost:9090
+#Environment=IVIVA_BRE_URL=http://localhost:5004/api/writerapi
+[Install]
+WantedBy=multi-user.target
+

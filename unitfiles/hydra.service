@@ -1,0 +1,15 @@
+[Unit]
+Description=hydra
+After=network.target
+StartLimitIntervalSec=90
+StartLimitBurst=5
+[Service]
+WorkingDirectory=/var/data/iviva/microservices/NodeES6Eval
+ExecStart=/home/iviva/.nvm/versions/node/v12.22.12/bin/node out/app.js
+Restart=on-failure
+# Restart service after 5 seconds if the service crashes
+RestartSec=5
+Environment=HYDRA_LOG_LOCATION=/var/log/iviva
+[Install]
+WantedBy=multi-user.target
+
